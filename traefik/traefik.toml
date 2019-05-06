@@ -1,0 +1,27 @@
+[global]
+debug = true
+
+defaultEntryPoints = ["http"]
+
+[api]
+dashboard = false
+entryPoint = "api"
+
+[log]
+logLevel = "DEBUG"
+
+[accessLog]
+
+[entryPoints]
+  [entryPoints.http]
+    address = ":80"
+    compress = true
+  [entryPoints.api]
+    address = ":8081"
+
+[providers]
+
+[providers.docker]
+endpoint = "unix:///var/run/balena.sock"
+watch = true
+exposedByDefault = false
